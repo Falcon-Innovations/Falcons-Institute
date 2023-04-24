@@ -1,13 +1,14 @@
 
 import {Fragment} from "react";
 import Navbar from "@/components/shared/navbar";
+import Container from "@/components/layout/container";
+import {Hero} from "@/components/home/hero";
 
 export default function Home() {
   return (
     <Fragment>
-      <main className="container mx-auto px-16 2xl:px-0">
-        <Navbar />
-      </main>
+      <Navbar />
+      <Hero />
     </Fragment>
   );
 }

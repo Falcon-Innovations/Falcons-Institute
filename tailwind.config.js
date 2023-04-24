@@ -36,7 +36,12 @@ module.exports = {
           500: "#111111",
         },
         blue: {
+          50: "#ECECEC",
+          500: "#3C3DCC",
           600: "#3738C8",
+        },
+        orange: {
+          500: "#F5812D",
         },
         error: "#FF644F",
       },
