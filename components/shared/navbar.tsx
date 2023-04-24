@@ -1,6 +1,7 @@
 import React from 'react'
 import {Phone, Mail, Locate} from 'lucide-react'
 import Container from '@/components/layout/container'
+import {CustomButton} from './CustomButton'
 const Navbar = () => {
     return (
         <Container>
@@ -33,7 +34,7 @@ const Navbar = () => {
                         <h1 className='text-black-500 font-bold text-2xl'>Falcon<span className='text-orange-500'>Institute</span></h1>
                         <p className="text-blue-600 text-[20px] font-semibold">Education</p>
                     </div>
-                    <button className='bg-orange-500 text-white whitespace-nowrap py-3 px-5 align-middle rounded-3xl'>Get started</button>
+                    <CustomButton label="Get started" />
                 </div>
             </div>
         </Container>
