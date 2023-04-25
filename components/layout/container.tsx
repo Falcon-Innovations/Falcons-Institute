@@ -8,7 +8,7 @@ type ContainerProps = {
 }
 const Container = ({children, classNames}: ContainerProps) => {
     return (
-        <div className={twMerge('container mx-auto px-16 2xl:px-0', classNames)}>{children}</div>
+        <div className={twMerge('container mx-auto sm:px-16 2xl:px-0', classNames)}>{children}</div>
     )
 }
 

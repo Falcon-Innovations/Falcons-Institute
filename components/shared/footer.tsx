@@ -17,7 +17,7 @@ export const Footer = () => {
 
     return (
         <footer className='w-full relative'>
-            <Container classNames='py-12'>
+            <Container classNames='py-12 px-4'>
                 <div className='flex flex-col sm:flex-row items-start w-full justify-between'>
                     <section className=''>
                         <div className='flex items-center w-full space-x-12'>
