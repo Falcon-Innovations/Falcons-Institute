@@ -1,5 +1,5 @@
 import React from 'react'
-import {Phone, Mail, Locate} from 'lucide-react'
+import {Phone, Mail, MapPin} from 'lucide-react'
 import Container from '@/components/layout/container'
 import {CustomButton} from './CustomButton'
 const Navbar = () => {
@@ -22,7 +22,7 @@ const Navbar = () => {
                         <p className="text-black-400 text-sm">contact@falcon-institute.com</p>
                     </div>
                     <div className="flex items-center space-x-1">
-                        <Locate
+                        <MapPin
                             aria-hidden="true"
                             className="h-4 w-4 text-orange-500"
                         />
