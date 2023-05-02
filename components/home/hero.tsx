@@ -6,89 +6,10 @@ import Link from 'next/link';
 import LadyWithBooks from '../../public/lady-with-books.png';
 import {motion} from 'framer-motion';
 import Container from '@/components/layout/container';
-import {CustomInput} from '../shared/CustomInput';
-import {CustomSelect} from '../shared/CustomSelect';
+import {Waitlist} from './waitlist';
 
-const PROGRAMMES = [
-    {
-        label: 'Interest',
-        value: 'placeholder'
-    },
-    {
-        label: 'Web dev',
-        value: 'Web dev'
-    },
-    {
-        label: 'UI / UX',
-        value: 'ui/ux'
-    },
-]
-
-const WaitListForm = () => {
-    const [selectedProgram, setSelectedProgram] = useState(PROGRAMMES[0])
-
-    return (
-        <section className='w-[90%] sm:w-4/5 mx-auto flex bg-white rounded-[12px] shadow-xl'>
-            <div className="hidden sm:block w-1/3 relative rounded-l-lg bg-red-600">
-                <img
-                    src="team.png"
-                    className="rounded-l-[12px]"
-                    alt="team picture"
-                />
-            </div>
-            <div className="w-2/3 hidden  sm:flex flex-col justify-between px-8 py-6">
-                <div className='flex text-orange-500 items-center space-x-4'>
-                    <span className="d-block w-8 h-[0.5px] bg-orange-500 " />
-                    <p className="text-xs">
-                        For everyone
-                    </p>
-                </div>
-                <h2 className="text-black-400 text-2xl font-semibold">
-                    What are you waiting for? Start your tech career now.
-                </h2>
-                <div className="w-full flex items-center space-x-3">
-                    <CustomInput placeholder='Your name' />
-                    <CustomInput placeholder='Your email' type="email" />
-                </div>
-                <div className="w-full flex items-center space-x-3 justify-between">
-                    <CustomInput placeholder='Phone number' />
-                    <CustomSelect
-                        name="Programme"
-                        selected={selectedProgram}
-                        setSelected={setSelectedProgram}
-                        options={PROGRAMMES}
-                    />
-                    <CustomButton label='Join waitlist' />
-                </div>
-            </div>
-            {/* Mobile styles */}
-            <div className="w-full gap-4 flex flex-col sm:hidden justify-between px-8 py-6">
-                <div className='flex text-orange-500 items-center space-x-4'>
-                    <span className="d-block w-8 h-[0.5px] bg-orange-500 " />
-                    <p className="text-xs">
-                        For everyone
-                    </p>
-                </div>
-                <h2 className="text-black-400 text-lg font-semibold">
-                    What are you waiting for? Start your tech career now.
-                </h2>
-                <CustomInput placeholder='Your name' />
-                <CustomInput placeholder='Your email' type="email" />
-                <CustomInput placeholder='Phone number' />
-                <CustomSelect
-                    name="Programme"
-                    selected={selectedProgram}
-                    setSelected={setSelectedProgram}
-                    options={PROGRAMMES}
-                />
-                <CustomButton label='Join waitlist' />
-            </div>
-        </section>
-    )
-}
 
 export const Hero = () => {
-
 
     return (
         <div className="w-full bg-blue-50 pb-8">
@@ -166,7 +87,7 @@ export const Hero = () => {
                         </div>
                     </div>
                 </div>
-                <WaitListForm />
+                <Waitlist />
             </Container>
         </div>
     )
