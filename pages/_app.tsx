@@ -8,6 +8,8 @@ import cx from "classnames";
 import localFont from "@next/font/local";
 import {Inter} from "@next/font/google";
 import Waitlist from "contexts/waitlist";
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const sfPro = localFont({
   src: "../styles/SF-Pro-Display-Medium.otf",
@@ -30,6 +32,7 @@ export default function MyApp({
         <RWBProvider>
           <main className={cx(sfPro.variable, inter.variable)}>
             <Component {...pageProps} />
+            <ToastContainer />
           </main>
         </RWBProvider>
         <Analytics />

@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React, {useState} from 'react'
+import {toast} from 'react-toastify';
 import {CustomButton} from '@/components/shared/CustomButton';
 import {CustomInput} from '../shared/CustomInput';
 import {CustomSelect} from '../shared/CustomSelect';
@@ -33,17 +34,16 @@ export const Waitlist = () => {
             phone_number: phoneNumber,
             interest: selectedProgram.value
         }
-        console.log(freshStudent)
         try {
-            const result = await (ref(db, 'students/'), freshStudent);
             const newStudentKey = push(child(ref(db), 'students')).key;
-            const updates = {};
+            const updates = {} as any;
             updates['/students/' + newStudentKey] = freshStudent;
             return update(ref(db), updates).then(() => {
-                console.log("Data saved succesfully")
+                toast("You have been added to the waitlist");
             })
         } catch (e) {
-            console.error("Error adding document: ", e);
+            console.error(e)
+            toast("Something went wrong, please try again");
         }
     }
 
@@ -104,16 +104,26 @@ export const Waitlist = () => {
                 <h2 className="text-black-400 text-lg font-semibold">
                     What are you waiting for? Start your tech career now.
                 </h2>
-                <CustomInput placeholder='Your name' />
-                <CustomInput placeholder='Your email' type="email" />
-                <CustomInput placeholder='Phone number' />
+                <CustomInput placeholder='Your name'
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
+                <CustomInput
+                    placeholder='Your email'
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)} />
+                <CustomInput
+                    placeholder='Phone number'
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)} />
                 <CustomSelect
                     name="Programme"
                     selected={selectedProgram}
                     setSelected={setSelectedProgram}
                     options={PROGRAMMES}
                 />
-                <CustomButton label='Join waitlist' />
+                <CustomButton label='Join waitlist' onClick={joinWaitlist} />
             </div>
         </section>
     )
